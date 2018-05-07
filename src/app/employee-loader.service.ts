@@ -10,7 +10,9 @@ export interface Employee {
   last_name: string;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class EmployeeLoaderService {
 
   constructor(private http: HttpClient) { }
