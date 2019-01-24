@@ -20,6 +20,8 @@ export class EmployeeLoaderService {
   loadEmployees(): Observable<Employee[]> {
     return this.http
       .get<Employee[]>(API_URL + '/employees')
-      .pipe(map(employees => employees.slice(0, 5)));
+      .pipe(
+        map(employees => employees.slice(0, 5))
+      );
   }
 }
