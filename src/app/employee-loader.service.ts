@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const API_URL = 'https://api.angularbootcamp.com';
+const apiUrl = 'https://api.angularbootcamp.com';
 
 export interface Employee {
   first_name: string;
@@ -19,7 +19,7 @@ export class EmployeeLoaderService {
 
   loadEmployees(): Observable<Employee[]> {
     return this.http
-      .get<Employee[]>(API_URL + '/employees')
+      .get<Employee[]>(apiUrl + '/employees')
       .pipe(
         map(employees => employees.slice(0, 5))
       );
