@@ -14,14 +14,11 @@ export interface Employee {
   providedIn: 'root'
 })
 export class EmployeeLoaderService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   loadEmployees(): Observable<Employee[]> {
     return this.http
       .get<Employee[]>(apiUrl + '/employees')
-      .pipe(
-        map(employees => employees.slice(0, 5))
-      );
+      .pipe(map(employees => employees.slice(0, 5)));
   }
 }
